@@ -31,10 +31,10 @@ If user selected OR condition, and selected Drama and Family as genre, movies wi
 
 ## Files
 
-**createdb.sql:**  This file creates all required tables.
-**dropdb.sql:** This file drops all tables and the other objects once created by createdb.sql file.
-**populate.java:** This program populates data files into database. Every time you run this program, it will remove the previous data in the tables.
-**hw3.java:**  This program provides a GUI, to query database. 
+- **createdb.sql:**  This file creates all required tables.
+- **dropdb.sql:** This file drops all tables and the other objects once created by createdb.sql file.
+- **populate.java:** This program populates data files into database. Every time you run this program, it will remove the previous data in the tables.
+- **hw3.java:**  This program provides a GUI, to query database. 
 
 ## Dataset
 
@@ -50,6 +50,6 @@ If user selected OR condition, and selected Drama and Family as genre, movies wi
  - 47957 tag assignments (tags), i.e. tuples [user, tag, movie] (avg. 22.696 tags per user, avg. 8.117 tags per movie) 
 
 The dataset used for the project is an extension of MovieLens10M dataset, published by GroupLeans research group, http://www.grouplens.org. The datadset links the movies of MovieLens dataset with their corresponding web pages at Internet Movie Database (IMDb) and Rotten Tomatoes movie review systems.
-http://www.imdb.com
-http://www.rottentomatoes.com
+- http://www.imdb.com
+- http://www.rottentomatoes.com
 
