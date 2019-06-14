@@ -1,0 +1,53 @@
+CREATE TABLE MOVIE (
+    id INTEGER,
+    title VARCHAR2(255) NOT NULL,
+    year INTEGER NOT NULL,
+    rtAllCriticsRating NUMBER,
+    rtAllCriticsNumReviews INTEGER,
+    rtTopCriticsRating NUMBER,
+    rtTopCriticsNumReviews INTEGER,
+    rtAudienceRating NUMBER,
+    rtAudienceNumRatings INTEGER,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE MOVIE_GENRES (
+    movieID INTEGER,
+    genre VARCHAR2(50),
+    PRIMARY KEY (movieID, genre),
+    FOREIGN KEY (movieID) REFERENCES MOVIE (id) ON DELETE CASCADE
+);
+
+CREATE TABLE MOVIE_COUNTRIES (
+    movieID INTEGER,
+    country VARCHAR2(50),
+    PRIMARY KEY (movieID),
+    FOREIGN KEY (movieID) REFERENCES MOVIE (id) ON DELETE CASCADE
+);
+
+CREATE TABLE MOVIE_LOCATIONS (
+    movieID INTEGER NOT NULL,
+    location1 VARCHAR2(50),
+    location2 VARCHAR2(255),
+    location3 VARCHAR2(255),
+    location4 VARCHAR2(255),
+    FOREIGN KEY (movieID) REFERENCES MOVIE (id) ON DELETE CASCADE
+);
+
+CREATE TABLE TAG (
+    id INTEGER,
+    value VARCHAR2(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE MOVIE_TAGS (
+    movieID INTEGER,
+    tagID INTEGER,
+    tagWeight INTEGER NOT NULL,
+    PRIMARY KEY (movieID, tagID),
+    FOREIGN KEY (movieID) REFERENCES MOVIE (id) ON DELETE CASCADE,
+    FOREIGN KEY (tagID) REFERENCES TAG (id) ON DELETE CASCADE
+);
+
+CREATE INDEX LOCATION_INDEX ON MOVIE_LOCATIONS (location1);
+CREATE INDEX TAG_INDEX ON TAG (value);
